@@ -1,3 +1,5 @@
+// 3-payment.test.js
+
 const sinon = require('sinon');
 const assert = require('assert');
 const sendPaymentRequestToApi = require('./3-payment');
