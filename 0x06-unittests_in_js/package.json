@@ -1,3 +1,14 @@
-"scripts": {
-  "test": "mocha"
+{
+  "name": "Unittests in JS",
+  "version": "1.0.0",
+  "description": "JavaScript unit tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Samuel Mukosa Chibwe",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^9.0.0"
+  }
 }
