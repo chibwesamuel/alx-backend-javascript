@@ -8,9 +8,9 @@ const countStudents = (path) => {
   try {
     // Read the database file synchronously
     const data = fs.readFileSync(path, 'utf8');
-    
+
     // Split the data by lines and filter out empty lines
-    const lines = data.split('\n').filter(line => line.trim() !== '');
+    const lines = data.split('\n').filter((line) => line.trim() !== '');
 
     // Initialize counts object to store the number of students per field
     const counts = {};
@@ -19,8 +19,8 @@ const countStudents = (path) => {
     for (const line of lines) {
       // Split the line by commas to extract fields
       const fields = line.split(',');
-      const field = fields[fields.length - 1].trim(); // Last field is assumed to be the student's field
-      
+      const field = fields[fields.length - 1].trim();
+
       // Increment count for the field
       counts[field] = (counts[field] || 0) + 1;
     }
@@ -30,12 +30,18 @@ const countStudents = (path) => {
 
     // Log the number of students per field
     for (const field in counts) {
-      console.log(`Number of students in ${field}: ${counts[field]}. List: ${lines.filter(line => line.endsWith(field)).map(line => line.split(',')[0].trim()).join(', ')}`);
+      if (Object.prototype.hasOwnProperty.call(counts, field)) {
+        console.log(`Number of students in ${field}: ${counts[field]}. List: ${
+          lines.filter((line) => line.endsWith(field))
+            .map((line) => line.split(',')[0].trim())
+            .join(', ')
+        }`);
+      }
     }
-    } catch (error) {
-      // Throw an error if the database is not available
-      throw new Error('Cannot load the database');
-    }
+  } catch (error) {
+    // Throw an error if the database is not available
+    throw new Error('Cannot load the database');
+  }
 };
 
 module.exports = countStudents;
