@@ -30,14 +30,14 @@ describe('Available Payments endpoint', () => {
 
 describe('Cart endpoint', () => {
   it('Test for GET / exists', (done) => {
-    request('http://localhost:7865/cart', (error, response) => {
+    request('http://localhost:7865/', (error, response) => {
       expect(response.statusCode).to.equal(200);
       done();
     });
   });
 
   it('Test for GET / returns “Welcome to the payment system” exists', (done) => {
-    request('http://localhost:7865/cart', (error, response) => {
+    request('http://localhost:7865/', (error, response) => {
       expect(response.body).to.equal('Welcome to the payment system');
       done();
     });
