@@ -11,4 +11,7 @@ process.stdin.once('data', (input) => {
 
   // Display closing message
   console.log('This important software is now closing');
+
+  // Exit the process
+  process.exit();
 });
