@@ -1,5 +1,5 @@
 const http = require('http');
-const fs = require('fs');
+const fs = require('fs');c
 
 // Function to read file asynchronously and return a Promise
 const readDatabase = (path) => new Promise((resolve, reject) => {
