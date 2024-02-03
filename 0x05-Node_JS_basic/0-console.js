@@ -1,5 +1,5 @@
 /**
- * Prints a message to the standard output (STDOUT).
+ * Prints a given message to the standard output (STDOUT).
  * @param {string} message - The message to be printed.
  */
 const displayMessage = (message) => {
