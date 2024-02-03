@@ -25,7 +25,11 @@ app.post('/login', (req, res) => {
 
 app.get('/cart/:id', (req, res) => {
   const { id } = req.params;
-  res.send(`Payment methods for cart ${id}`);
+  if (!isNaN(id)) {
+    res.send(`Payment methods for cart ${id}`);
+  } else {
+    res.status(404).send('Not Found');
+  }
 });
 
 app.listen(PORT, () => {
