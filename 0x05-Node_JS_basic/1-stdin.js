@@ -15,8 +15,8 @@ process.stdin.on('data', (input) => {
     nameEntered = true;
   }
 
-  // Check if the user pressed Enter without typing anything and a name was entered previously
-  if (input.length === 1 && nameEntered) {
+  // Check if the user pressed Enter without typing anything
+  if (input.length === 1 && input.toString().trim() === '' && nameEntered) {
     // Display closing message
     process.stdout.write('This important software is now closing\n');
     process.exit(); // Exit the process
