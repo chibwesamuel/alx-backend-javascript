@@ -1,3 +1,18 @@
+// Function to handle input
+const handleInput = (input) => {
+  // Extract and trim the input
+  const name = input.toString().trim();
+
+  // Display the user's name
+  console.log(`Your name is: ${name}`);
+
+  // Display closing message
+  console.log('This important software is now closing');
+
+  // Exit the process
+  process.exit();
+};
+
 // Display the initial message
 console.log('Welcome to Holberton School, what is your name?');
 
@@ -20,18 +35,3 @@ if (process.stdin.isTTY) {
     handleInput(data);
   });
 }
-
-// Function to handle input
-const handleInput = (input) => {
-  // Extract and trim the input
-  const name = input.toString().trim();
-
-  // Display the user's name
-  console.log(`Your name is: ${name}`);
-
-  // Display closing message
-  console.log('This important software is now closing');
-
-  // Exit the process
-  process.exit();
-};
