@@ -2,11 +2,16 @@ const http = require('http');
 
 // Create the HTTP server
 const app = http.createServer((req, res) => {
-  // Set the response headers
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-
-  // Send the response body for any endpoint
-  res.end('Hello Holberton School!\n');
+  if (req.url === '/' || req.url === '/test') {
+    // Set the response headers
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    // Send the response body
+    res.end('Hello Holberton School!\n');
+  } else {
+    // Send a 404 response for other endpoints
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('404 Not Found\n');
+  }
 });
 
 // Listen on port 1245
